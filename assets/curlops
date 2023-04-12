@@ -15,18 +15,18 @@ invokeEndpoint() {
 createTempFiles() {
   # this facilitates our ability to test, since our tests will create/populate these files
   if notSet request_headers; then
-    request_headers=$(mktemp /tmp/request_headers.XXXXXX)
-    log "created temp file for request_headers at $request_headers"
+    request_headers=$(mktemp $PWD/request_headers.XXXXXX)
+    log "created file for request_headers at $request_headers"
   fi
 
   if notSet response_headers; then
-    response_headers=$(mktemp /tmp/response_headers.XXXXXX)
-    log "created temp file for response_headers at $response_headers"
+    response_headers=$(mktemp $PWD/response_headers.XXXXXX)
+    log "created file for response_headers at $response_headers"
   fi
 
   if notSet response_body; then
-    response_body=$(mktemp /tmp/response_body.XXXXXX)
-    log "created temp file for response_body at $response_body"
+    response_body=$(mktemp $PWD/response_body.XXXXXX)
+    log "created file for response_body at $response_body"
   fi
 }
 
